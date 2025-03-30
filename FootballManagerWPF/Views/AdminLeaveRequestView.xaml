@@ -1,0 +1,33 @@
+﻿<Window x:Class="FootballManagerWPF.Views.AdminLeaveRequestView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootballManagerWPF.Views"
+        mc:Ignorable="d"
+        Title="Quản lý Yêu cầu nghỉ" Height="500" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Yêu cầu nghỉ của nhân viên" FontSize="24" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+            <DataGrid ItemsSource="{Binding LeaveRequests}" AutoGenerateColumns="False" Height="350"
+                      SelectedItem="{Binding SelectedLeaveRequest, Mode=TwoWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding LeaveId}" Width="Auto"/>
+                    <DataGridTextColumn Header="Employee ID" Binding="{Binding EmployeeId}" Width="Auto"/>
+                    <DataGridTextColumn Header="Loại nghỉ" Binding="{Binding LeaveType}" Width="*"/>
+                    <DataGridTextColumn Header="Ngày bắt đầu" Binding="{Binding StartDate}" Width="*"/>
+                    <DataGridTextColumn Header="Ngày kết thúc" Binding="{Binding EndDate}" Width="*"/>
+                    <DataGridTextColumn Header="Số ngày" Binding="{Binding TotalDays}" Width="Auto"/>
+                    <DataGridTextColumn Header="Trạng thái" Binding="{Binding Status}" Width="*"/>
+                    <DataGridTextColumn Header="Ngày yêu cầu" Binding="{Binding RequestedAt, StringFormat='dd/MM/yyyy'}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                <Button Content="Phê duyệt" Command="{Binding ApproveCommand}" Width="100" Margin="5"/>
+                <Button Content="Từ chối" Command="{Binding RejectCommand}" Width="100" Margin="5"/>
+                <Button Content="Làm mới" Command="{Binding RefreshCommand}" Width="100" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

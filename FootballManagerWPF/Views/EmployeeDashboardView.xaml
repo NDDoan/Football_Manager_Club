@@ -1,0 +1,75 @@
+﻿<Window x:Class="FootballManagerWPF.Views.EmployeeDashboardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FootballManagerWPF.Views"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:conv="clr-namespace:FootballManagerWPF.Helpers"
+        mc:Ignorable="d"
+        Title="Employee Dashboard" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <conv:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+    </Window.Resources>
+    <Grid>
+        <!-- Background GIF (nếu bạn muốn sử dụng GIF động làm background) -->
+        <Image gif:ImageBehavior.AnimatedSource="C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\Views\Images\employee_background.gif"
+           gif:ImageBehavior.AutoStart="True"
+           Stretch="UniformToFill"
+           Panel.ZIndex="0"/>
+
+        <!-- Panel hiển thị thông báo admin ở góc trên bên phải -->
+        <Border Background="#CCFFFFFF" CornerRadius="5" Padding="10" 
+        HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"
+        Panel.ZIndex="2"
+        Visibility="{Binding LatestAdminNotification, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackPanel>
+                <TextBlock Text="{Binding LatestAdminNotification.Title}" FontWeight="Bold" FontSize="16" Foreground="Black"/>
+                <TextBlock Text="{Binding LatestAdminNotification.Content}" FontSize="14" TextWrapping="Wrap" MaxWidth="300" Foreground="Black" Margin="0,5,0,0"/>
+                <TextBlock Text="{Binding LatestAdminNotification.CreatedAt, StringFormat='dd/MM/yyyy HH:mm'}" FontSize="12" Foreground="Gray" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Nội dung chính overlay trên background -->
+        <Grid Panel.ZIndex="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Sidebar -->
+            <StackPanel Grid.Column="0" Background="#AA000000">
+                <!-- Thông tin cá nhân -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                    <Ellipse Width="60" Height="60" Stroke="White" StrokeThickness="2">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding EmployeeAvatar}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                        <TextBlock Text="{Binding EmployeeUsername}" FontWeight="Bold" FontSize="18" Foreground="White"/>
+                        <TextBlock Text="{Binding EmployeeFullName}" FontSize="14" Foreground="White"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Nút chức năng -->
+                <Button Content="Chấm công" Command="{Binding OpenAttendanceCommand}" Height="40" Margin="0,5"/>
+                <Button Content="Bảng lương" Command="{Binding OpenPayrollCommand}" Height="40" Margin="0,5"/>
+                <Button Content="Yêu cầu nghỉ" Command="{Binding OpenLeaveRequestCommand}" Height="40" Margin="0,5"/>
+                <Button Content="Xem thông báo của Admin" Command="{Binding OpenNotificationsCommand}" Height="40" Margin="0,5"/>
+                <Button Content="Đăng xuất" Command="{Binding LogoutCommand}" Height="40" Margin="0,20,0,0" Foreground="Red"/>
+            </StackPanel>
+
+            <!-- Khu vực nội dung chính -->
+            <Grid Grid.Column="1" Background="#55FFFFFF">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Chào mừng, Employee Dashboard!" 
+                               FontSize="24" FontWeight="Bold" Foreground="Black" TextAlignment="Center"/>
+                    <TextBlock Text="Tại đây, bạn có thể xem thông tin cá nhân, chấm công, bảng lương, yêu cầu nghỉ và các thông báo từ quản lý." 
+                               FontSize="16" Foreground="Black" Margin="0,10,0,0" TextWrapping="Wrap" Width="400" TextAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
