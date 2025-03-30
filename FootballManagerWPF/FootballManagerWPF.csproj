@@ -28,6 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Views\BGM\admin_BGM.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Views\BGM\employee_BGM.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Views\BGM\nhac_cho_login.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Views\Images\AdminDashBoard.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -44,6 +53,7 @@
 
   <ItemGroup>
     <Folder Include="Repositories\" />
+    <Folder Include="Views\BGM\" />
   </ItemGroup>
 
 </Project>

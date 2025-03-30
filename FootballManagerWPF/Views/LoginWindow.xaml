@@ -11,32 +11,40 @@
     <Window.Background>
         <ImageBrush ImageSource="C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\Views\Images\Sân-Bóng-Đá.png" Stretch="UniformToFill"/>
     </Window.Background>
-
-    <!-- Overlay login panel có nền bán trong suốt -->
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <!-- MediaElement cho nhạc nền Login -->
+        <MediaElement x:Name="LoginMusic"
+                      Source="C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\Views\BGM\nhac_cho_login.mp3"
+                      LoadedBehavior="Play"
+                      UnloadedBehavior="Stop"
+                      Volume="0.5"
+                      MediaEnded="LoginMusic_MediaEnded" />
+        <!-- Overlay login panel có nền bán trong suốt -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <!-- Login Panel -->
-        <Border Grid.Row="1" Grid.Column="1" Background="#CCFFFFFF" CornerRadius="10" Padding="20">
-            <StackPanel>
-                <TextBlock Text="Đăng nhập" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
-                <TextBlock Text="Username:"/>
-                <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,15" Width="250"/>
-                <TextBlock Text="Password:"/>
-                <!-- Vì PasswordBox không hỗ trợ binding trực tiếp, ta xử lý qua event -->
-                <PasswordBox x:Name="PasswordBox" Margin="0,5,0,20" Width="250" PasswordChanged="PasswordBox_PasswordChanged"/>
-                <Button Content="Login" Command="{Binding LoginCommand}" Width="250" Height="35"/>
-                <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="0,10,0,0" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </Border>
+            <!-- Login Panel -->
+            <Border Grid.Row="1" Grid.Column="1" Background="#CCFFFFFF" CornerRadius="10" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Đăng nhập" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                    <TextBlock Text="Username:"/>
+                    <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Margin="0,5,0,15" Width="250"/>
+                    <TextBlock Text="Password:"/>
+                    <!-- Vì PasswordBox không hỗ trợ binding trực tiếp, ta xử lý qua event -->
+                    <PasswordBox x:Name="PasswordBox" Margin="0,5,0,20" Width="250" PasswordChanged="PasswordBox_PasswordChanged"/>
+                    <Button Content="Login" Command="{Binding LoginCommand}" Width="250" Height="35"/>
+                    <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" Margin="0,10,0,0" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

@@ -209,3 +209,5 @@ C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerW
 C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\obj\Debug\net8.0-windows\Views\AdminNotificationView.baml
 C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\obj\Debug\net8.0-windows\Views\AdminLeaveRequestView.g.cs
 C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\obj\Debug\net8.0-windows\Views\AdminLeaveRequestView.baml
+C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\bin\Debug\net8.0-windows\Views\BGM\nhac_cho_login.mp3
+C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\obj\Debug\net8.0-windows\FootballManagerWPF.sourcelink.json

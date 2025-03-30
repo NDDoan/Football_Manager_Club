@@ -25,5 +25,11 @@ namespace FootballManagerWPF.Views
             InitializeComponent();
             DataContext = new AdminDashboardViewModel();
         }
+        private void AdminMusic_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            MediaElement media = sender as MediaElement;
+            media.Position = TimeSpan.Zero;
+            media.Play();
+        }
     }
 }

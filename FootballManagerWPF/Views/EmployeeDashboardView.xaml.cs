@@ -25,5 +25,11 @@ namespace FootballManagerWPF.Views
             InitializeComponent();
             DataContext = new EmployeeDashboardViewModel();
         }
+        private void EmployeeMusic_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            MediaElement media = sender as MediaElement;
+            media.Position = TimeSpan.Zero;
+            media.Play();
+        }
     }
 }

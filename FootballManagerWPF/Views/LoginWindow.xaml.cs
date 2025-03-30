@@ -34,5 +34,13 @@ namespace FootballManagerWPF.Views
                 vm.Password = PasswordBox.Password;
             }
         }
+        private void LoginMusic_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            // Reset lại vị trí và phát lại
+            MediaElement media = sender as MediaElement;
+            media.Position = TimeSpan.Zero;
+            media.Play();
+        }
+
     }
 }

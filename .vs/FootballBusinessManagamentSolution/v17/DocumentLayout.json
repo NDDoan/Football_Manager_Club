@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\LENOVO\\source\\repos\\FootballBusinessManagamentSolution\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E4E0F1F3-9AC9-4ACA-A5D6-8E7A6482E054}|FootballManagerWPF\\FootballManagerWPF.csproj|c:\\users\\lenovo\\source\\repos\\footballbusinessmanagamentsolution\\footballmanagerwpf\\viewmodels\\employeeleaverequestviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4E0F1F3-9AC9-4ACA-A5D6-8E7A6482E054}|FootballManagerWPF\\FootballManagerWPF.csproj|solutionrelative:footballmanagerwpf\\viewmodels\\employeeleaverequestviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4E0F1F3-9AC9-4ACA-A5D6-8E7A6482E054}|FootballManagerWPF\\FootballManagerWPF.csproj|c:\\users\\lenovo\\source\\repos\\footballbusinessmanagamentsolution\\footballmanagerwpf\\services\\leaverequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4E0F1F3-9AC9-4ACA-A5D6-8E7A6482E054}|FootballManagerWPF\\FootballManagerWPF.csproj|solutionrelative:footballmanagerwpf\\services\\leaverequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4E0F1F3-9AC9-4ACA-A5D6-8E7A6482E054}|FootballManagerWPF\\FootballManagerWPF.csproj|c:\\users\\lenovo\\source\\repos\\footballbusinessmanagamentsolution\\footballmanagerwpf\\services\\ileaverequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4E0F1F3-9AC9-4ACA-A5D6-8E7A6482E054}|FootballManagerWPF\\FootballManagerWPF.csproj|solutionrelative:footballmanagerwpf\\services\\ileaverequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,45 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmployeeLeaveRequestViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FootballBusinessManagamentSolution\\FootballManagerWPF\\ViewModels\\EmployeeLeaveRequestViewModel.cs",
-              "RelativeDocumentMoniker": "FootballManagerWPF\\ViewModels\\EmployeeLeaveRequestViewModel.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FootballBusinessManagamentSolution\\FootballManagerWPF\\ViewModels\\EmployeeLeaveRequestViewModel.cs",
-              "RelativeToolTip": "FootballManagerWPF\\ViewModels\\EmployeeLeaveRequestViewModel.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAQwF4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T13:38:28.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LeaveRequestService.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FootballBusinessManagamentSolution\\FootballManagerWPF\\Services\\LeaveRequestService.cs",
-              "RelativeDocumentMoniker": "FootballManagerWPF\\Services\\LeaveRequestService.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FootballBusinessManagamentSolution\\FootballManagerWPF\\Services\\LeaveRequestService.cs",
-              "RelativeToolTip": "FootballManagerWPF\\Services\\LeaveRequestService.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAADwv04AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T10:49:34.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ILeaveRequestService.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\source\\repos\\FootballBusinessManagamentSolution\\FootballManagerWPF\\Services\\ILeaveRequestService.cs",
-              "RelativeDocumentMoniker": "FootballManagerWPF\\Services\\ILeaveRequestService.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\source\\repos\\FootballBusinessManagamentSolution\\FootballManagerWPF\\Services\\ILeaveRequestService.cs",
-              "RelativeToolTip": "FootballManagerWPF\\Services\\ILeaveRequestService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T10:58:44.898Z",
-              "EditorCaption": ""
             }
           ]
         }

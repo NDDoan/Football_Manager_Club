@@ -9,55 +9,64 @@
         Title="Admin Dashboard" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <!-- Background GIF (nếu bạn muốn sử dụng GIF động làm background) -->
-        <Image gif:ImageBehavior.AnimatedSource="C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\Views\Images\AdminDashBoard.gif"
+        <Grid>
+            <!-- MediaElement cho nhạc nền Admin, tự động phát và lặp lại -->
+            <MediaElement x:Name="AdminMusic"
+                      Source="C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\Views\BGM\admin_BGM.mp3"
+                      LoadedBehavior="Play"
+                      UnloadedBehavior="Stop"
+                      Volume="0.5"
+                      MediaEnded="AdminMusic_MediaEnded" />
+            <!-- Background GIF (nếu bạn muốn sử dụng GIF động làm background) -->
+            <Image gif:ImageBehavior.AnimatedSource="C:\Users\LENOVO\source\repos\FootballBusinessManagamentSolution\FootballManagerWPF\Views\Images\AdminDashBoard.gif"
                gif:ImageBehavior.AutoStart="True"
                Stretch="UniformToFill"
                Panel.ZIndex="0"/>
 
-        <!-- Nội dung chính overlay trên background -->
-        <Grid Panel.ZIndex="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <!-- Nội dung chính overlay trên background -->
+            <Grid Panel.ZIndex="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- Sidebar -->
-            <StackPanel Grid.Column="0" Background="#AA000000">
-                <!-- Thông tin cá nhân admin -->
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
-                    <Ellipse Width="50" Height="50" Stroke="White" StrokeThickness="2">
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="{Binding AdminAvatar}"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
-                    <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
-                        <TextBlock Text="{Binding AdminName}" FontWeight="Bold" FontSize="16" Foreground="White"/>
-                        <TextBlock Text="{Binding AdminEmail}" FontSize="12" Foreground="White"/>
+                <!-- Sidebar -->
+                <StackPanel Grid.Column="0" Background="#AA000000">
+                    <!-- Thông tin cá nhân admin -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <Ellipse Width="50" Height="50" Stroke="White" StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding AdminAvatar}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding AdminName}" FontWeight="Bold" FontSize="16" Foreground="White"/>
+                            <TextBlock Text="{Binding AdminEmail}" FontSize="12" Foreground="White"/>
+                        </StackPanel>
                     </StackPanel>
+
+                    <!-- Các nút chức năng -->
+                    <Button Content="Quản lý Nhân viên" Command="{Binding OpenEmployeeManagementCommand}" Margin="0,5" Height="35"/>
+                    <Button Content="Quản lý Phòng ban" Command="{Binding OpenDepartmentManagementCommand}" Margin="0,5" Height="35"/>
+                    <Button Content="Quản lý Lương thưởng" Command="{Binding OpenPayrollManagementCommand}" Margin="0,5" Height="35"/>
+                    <Button Content="Quản lý Chấm công" Command="{Binding OpenAttendanceManagementCommand}" Margin="0,5" Height="35"/>
+                    <Button Content="Quản lý Thông báo" Command="{Binding OpenNotificationManagementCommand}" Margin="0,5" Height="35"/>
+                    <Button Content="Lịch sử Hoạt động" Command="{Binding OpenActivityLogManagementCommand}" Margin="0,5" Height="35"/>
+                    <Button Content="Quản lý Yêu cầu Nghỉ" Command="{Binding OpenLeaveRequestManagementCommand}" Margin="0,5" Height="35"/>
+                    <!-- Thêm nút Backup trong Sidebar của AdminDashboardView -->
+                    <Button Content="Sao lưu và Phục hồi" Command="{Binding OpenBackupManagementCommand}" Margin="0,5" Height="35"/>
+                    <Button Content="Báo cáo và Thống kê" Command="{Binding OpenReportManagementCommand}" Margin="0,5" Height="35"/>
+                    <Button Content="Đăng xuất" Command="{Binding LogoutCommand}" Margin="0,20,0,0" Height="35" Foreground="Red"/>
                 </StackPanel>
 
-                <!-- Các nút chức năng -->
-                <Button Content="Quản lý Nhân viên" Command="{Binding OpenEmployeeManagementCommand}" Margin="0,5" Height="35"/>
-                <Button Content="Quản lý Phòng ban" Command="{Binding OpenDepartmentManagementCommand}" Margin="0,5" Height="35"/>
-                <Button Content="Quản lý Lương thưởng" Command="{Binding OpenPayrollManagementCommand}" Margin="0,5" Height="35"/>
-                <Button Content="Quản lý Chấm công" Command="{Binding OpenAttendanceManagementCommand}" Margin="0,5" Height="35"/>
-                <Button Content="Quản lý Thông báo" Command="{Binding OpenNotificationManagementCommand}" Margin="0,5" Height="35"/>
-                <Button Content="Lịch sử Hoạt động" Command="{Binding OpenActivityLogManagementCommand}" Margin="0,5" Height="35"/>
-                <Button Content="Quản lý Yêu cầu Nghỉ" Command="{Binding OpenLeaveRequestManagementCommand}" Margin="0,5" Height="35"/>
-                <!-- Thêm nút Backup trong Sidebar của AdminDashboardView -->
-                <Button Content="Sao lưu và Phục hồi" Command="{Binding OpenBackupManagementCommand}" Margin="0,5" Height="35"/>
-                <Button Content="Báo cáo và Thống kê" Command="{Binding OpenReportManagementCommand}" Margin="0,5" Height="35"/>
-                <Button Content="Đăng xuất" Command="{Binding LogoutCommand}" Margin="0,20,0,0" Height="35" Foreground="Red"/>
-            </StackPanel>
-
-            <!-- Khu vực nội dung chính -->
-            <Grid Grid.Column="1" Background="#55FFFFFF">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Chào mừng, Admin!" FontSize="24" FontWeight="Bold" Foreground="Black"/>
-                    <TextBlock Text="Đây là dashboard của bạn. Chọn chức năng bên trái để quản lý hệ thống." 
+                <!-- Khu vực nội dung chính -->
+                <Grid Grid.Column="1" Background="#55FFFFFF">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Chào mừng, Admin!" FontSize="24" FontWeight="Bold" Foreground="Black"/>
+                        <TextBlock Text="Đây là dashboard của bạn. Chọn chức năng bên trái để quản lý hệ thống." 
                                FontSize="16" Foreground="Black" Margin="0,10,0,0" TextWrapping="Wrap" Width="400"/>
-                </StackPanel>
+                    </StackPanel>
+                </Grid>
             </Grid>
         </Grid>
     </Grid>

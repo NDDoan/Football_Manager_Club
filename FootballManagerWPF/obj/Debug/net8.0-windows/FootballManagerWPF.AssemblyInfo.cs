@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FootballManagerWPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9c2422240616addea444d01ceecf9d65223006e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FootballManagerWPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FootballManagerWPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
